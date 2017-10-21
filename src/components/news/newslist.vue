@@ -2,7 +2,7 @@
   <div class="mui-content">
       <ul class="mui-table-view">
           <li v-for="item in newslist" :key="item.id" class="mui-table-view-cell nui-media">
-           <router-link to="/newsss">
+           <router-link :to="'/news/newsinfo/'+item.id">
                <img :src="item.img_url" class="mui-media-object mui-pull-left">
                <div class="mui-media-body">
                    <p class="titleStyle">{{item.title}}</p>
@@ -64,7 +64,7 @@
             getNewsListData(){
                 const url=common.apihost+'api/getnewslist'
                 this.$http.get(url).then(response=>{
-                    console.log(response.body.message)
+                    console.log(response)
                     this.newslist=response.body.message
 
                     

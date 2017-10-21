@@ -20,6 +20,7 @@ import shopcart from './components/shopcart/shopcart.vue'
 
 import mine from './components/mine/mine.vue'
 import newslist from './components/news/newslist.vue'
+import newsinfo from './components/news/newsinfo.vue'
 
 Vue.filter('dateFmt',(input,dateFmtString)=>{
   const lastFmtString=dateFmtString | 'YYYY-MM-DD HH:mm:ss'
@@ -34,7 +35,8 @@ const router = new VueRouter({
       {path:'/category',component:category},
       {path:'/shopcart',component:shopcart},
       {path:'/mine',component:mine},
-      {path:'/news/newslist',component:newslist}
+      {path:'/news/newslist',component:newslist},
+      {path:'/news/newsinfo/:newsId',component:newsinfo}
   ]
 })
 new Vue({
